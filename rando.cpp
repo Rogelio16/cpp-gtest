@@ -29,6 +29,11 @@ bool Rando::isDivisbleBy(int first, int second)
 **/
 bool Rando::isPrime(int num)
 {
+	for(int test = 2; test < num; test++)	
+	{
+		if(num % test == 0)
+			return false;
+	}
 	return true;
 }
 
@@ -38,5 +43,8 @@ bool Rando::isPrime(int num)
 **/
 int Rando::nearestToZero(int a, int b)
 {
-	return 0;
+	if(a < b)
+		return a;
+	else
+		return b;
 }
