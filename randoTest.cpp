@@ -27,4 +27,20 @@ TEST(RandoTest, allChildrenSmile)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
+	ASSERT_TRUE( rando.shouldWorry(true,false,false) );
+	ASSERT_FALSE( rando.shouldWorry(false,false,false) );
+	ASSERT_FALSE( rando.shouldWorry(true,true,false) );
 }
+
+TEST(RandoTest, checkIfPrimeNumbers) 
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isPrime(1));
+	ASSERT_TRUE( rando.isPrime(11));
+	ASSERT_TRUE( rando.isPrime(5));
+	ASSERT_FALSE( rando.isPrime(39));
+	ASSERT_FALSE( rando.isPrime(20));
+	ASSERT_FALSE( rando.isPrime(9));
+	ASSERT_FALSE( rando.isPrime(25));
+}
+
