@@ -46,3 +46,27 @@ TEST(RandoTest, noChildrenSmile)
 	Rando rando;
 	ASSERT_FALSE( rando.shouldWorry(false,false,false) );
 }
+
+TEST(RandoTeset, twoIsPrime)
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isPrime(2) );
+}
+
+TEST(RandoTest, tenIsNotPrime)
+{
+	Rando rando;
+	ASSERT_FALSE( rando.isPrime(10) );	
+}
+
+TEST(RandoTest, thirtynineIsNotPrime)
+{
+	Rando rando;
+	ASSERT_FALSE( rando.isPrime(39) );
+}
+
+TEST(RandoTest, thirteenIsPrime)
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isPrime(13) );
+}
