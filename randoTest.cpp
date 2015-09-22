@@ -27,20 +27,22 @@ TEST(RandoTest, allChildrenSmile)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
+}
+
+TEST(RandoTest, oneChildSmiles)
+{
+	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,false,false) );
-	ASSERT_FALSE( rando.shouldWorry(false,false,false) );
+}
+
+TEST(RandoTest, twoChildrenSmile)
+{
+	Rando rando;
 	ASSERT_FALSE( rando.shouldWorry(true,true,false) );
 }
 
-TEST(RandoTest, checkIfPrimeNumbers) 
+TEST(RandoTest, noChildrenSmile)
 {
 	Rando rando;
-	ASSERT_TRUE( rando.isPrime(1));
-	ASSERT_TRUE( rando.isPrime(11));
-	ASSERT_TRUE( rando.isPrime(5));
-	ASSERT_FALSE( rando.isPrime(39));
-	ASSERT_FALSE( rando.isPrime(20));
-	ASSERT_FALSE( rando.isPrime(9));
-	ASSERT_FALSE( rando.isPrime(25));
+	ASSERT_FALSE( rando.shouldWorry(false,false,false) );
 }
-
