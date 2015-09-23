@@ -47,7 +47,7 @@ TEST(RandoTest, noChildrenSmile)
 	ASSERT_FALSE( rando.shouldWorry(false,false,false) );
 }
 
-TEST(RandoTeset, twoIsPrime)
+TEST(RandoTest, twoIsPrime)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.isPrime(2) );
@@ -69,4 +69,40 @@ TEST(RandoTest, thirteenIsPrime)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.isPrime(13) );
+}
+
+TEST(RandoTest, twoIsDivisibleByTwo)
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isDivisbleBy(2,2) );
+}
+
+TEST(RandoTest, fiveIsNotDivisbleBy10)
+{
+	Rando rando;
+	ASSERT_FALSE( rando.isDivisbleBy(10,5) );
+}
+
+TEST(RandoTest, twoIsLessThanThree)
+{
+	Rando rando;
+	ASSERT_EQ( (rando.nearestToZero(2,3)),2 );
+}
+
+TEST(RandoTest, chooseThreeNotZero)
+{
+	Rando rando;
+	ASSERT_EQ( (rando.nearestToZero(0,10)),10 );
+}
+
+TEST(RandoTest, chooseTwoNotZero)
+{
+	Rando rando;
+	ASSERT_EQ( (rando.nearestToZero(2,0)),2 );
+}
+
+TEST(RandoTest, fiveIsLessThanTen)
+{
+	Rando rando;
+	ASSERT_EQ( (rando.nearestToZero(10,5)),5 );
 }
